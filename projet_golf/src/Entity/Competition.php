@@ -31,6 +31,12 @@ class Competition
      */
     private $listeJoueur;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Golf", inversedBy="competition")
+     */
+    private $golf;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -71,4 +77,18 @@ class Competition
 
         return $this;
     }
+
+    public function getGolf(): ?Golf
+    {
+        return $this->golf;
+    }
+
+    public function setGolf(?Golf $golf): self
+    {
+        $this->golf = $golf;
+
+        return $this;
+    }
+
+
 }
