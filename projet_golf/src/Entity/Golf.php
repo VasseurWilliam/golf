@@ -41,12 +41,18 @@ class Golf
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Competition", mappedBy="golf")
      */
-    private $competition;
+    private $competitions;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Parcours", mappedBy="golf")
+     */
+    private $parcours;
 
     public function __construct()
     {
         $this->trous = new ArrayCollection();
-        $this->competition = new ArrayCollection();
+        $this->competitions = new ArrayCollection();
+        $this->parcours = new ArrayCollection();
     }
 
 
@@ -126,15 +132,15 @@ class Golf
     /**
      * @return Collection|Competition[]
      */
-    public function getCompetition(): Collection
+    public function getCompetitions(): Collection
     {
-        return $this->competition;
+        return $this->competitions;
     }
 
     public function addCompetition(Competition $competition): self
     {
-        if (!$this->competition->contains($competition)) {
-            $this->competition[] = $competition;
+        if (!$this->competitions->contains($competition)) {
+            $this->competitions[] = $competition;
             $competition->setGolf($this);
         }
 
@@ -143,11 +149,42 @@ class Golf
 
     public function removeCompetition(Competition $competition): self
     {
-        if ($this->competition->contains($competition)) {
-            $this->competition->removeElement($competition);
+        if ($this->competitions->contains($competition)) {
+            $this->competitions->removeElement($competition);
             // set the owning side to null (unless already changed)
             if ($competition->getGolf() === $this) {
                 $competition->setGolf(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Parcours[]
+     */
+    public function getParcours(): Collection
+    {
+        return $this->parcours;
+    }
+
+    public function addParcour(Parcours $parcour): self
+    {
+        if (!$this->parcours->contains($parcour)) {
+            $this->parcours[] = $parcour;
+            $parcour->setGolf($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParcour(Parcours $parcour): self
+    {
+        if ($this->parcours->contains($parcour)) {
+            $this->parcours->removeElement($parcour);
+            // set the owning side to null (unless already changed)
+            if ($parcour->getGolf() === $this) {
+                $parcour->setGolf(null);
             }
         }
 

@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\TrouRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\PartieRepository")
  */
-class Trou
+class Partie
 {
     /**
      * @ORM\Id()
@@ -21,26 +21,15 @@ class Trou
     /**
      * @ORM\Column(type="integer")
      */
-    private $numero;
+    private $nbJoueur;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Competition", inversedBy="partie")
      */
-    private $par;
+    private $competition;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $tempsDeplacement;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Golf", inversedBy="trous")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $golf;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\DecalageTrouPartie", mappedBy="trou")
+     * @ORM\OneToMany(targetEntity="App\Entity\DecalageTrouPartie", mappedBy="partie")
      */
     private $decalageTrouPartie;
 
@@ -49,56 +38,31 @@ class Trou
         $this->decalageTrouPartie = new ArrayCollection();
     }
 
-
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNumero(): ?int
+    public function getNbJoueur(): ?int
     {
-        return $this->numero;
+        return $this->nbJoueur;
     }
 
-    public function setNumero(int $numero): self
+    public function setNbJoueur(int $nbJoueur): self
     {
-        $this->numero = $numero;
+        $this->nbJoueur = $nbJoueur;
 
         return $this;
     }
 
-    public function getPar(): ?int
+    public function getCompetition(): ?Competition
     {
-        return $this->par;
+        return $this->competition;
     }
 
-    public function setPar(int $par): self
+    public function setCompetition(?Competition $competition): self
     {
-        $this->par = $par;
-
-        return $this;
-    }
-
-    public function getTempsDeplacement(): ?string
-    {
-        return $this->tempsDeplacement;
-    }
-
-    public function setTempsDeplacement(string $tempsDeplacement): self
-    {
-        $this->tempsDeplacement = $tempsDeplacement;
-
-        return $this;
-    }
-
-    public function getGolf(): ?Golf
-    {
-        return $this->golf;
-    }
-
-    public function setGolf(?Golf $golf): self
-    {
-        $this->golf = $golf;
+        $this->competition = $competition;
 
         return $this;
     }
@@ -115,7 +79,7 @@ class Trou
     {
         if (!$this->decalageTrouPartie->contains($decalageTrouPartie)) {
             $this->decalageTrouPartie[] = $decalageTrouPartie;
-            $decalageTrouPartie->setTrou($this);
+            $decalageTrouPartie->setPartie($this);
         }
 
         return $this;
@@ -126,13 +90,11 @@ class Trou
         if ($this->decalageTrouPartie->contains($decalageTrouPartie)) {
             $this->decalageTrouPartie->removeElement($decalageTrouPartie);
             // set the owning side to null (unless already changed)
-            if ($decalageTrouPartie->getTrou() === $this) {
-                $decalageTrouPartie->setTrou(null);
+            if ($decalageTrouPartie->getPartie() === $this) {
+                $decalageTrouPartie->setPartie(null);
             }
         }
 
         return $this;
     }
-
-
 }

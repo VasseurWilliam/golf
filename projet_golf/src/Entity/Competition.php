@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,9 +34,19 @@ class Competition
     private $listeJoueur;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Golf", inversedBy="competition")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Golf", inversedBy="competitions")
      */
     private $golf;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Partie", mappedBy="competition")
+     */
+    private $partie;
+
+    public function __construct()
+    {
+        $this->partie = new ArrayCollection();
+    }
 
 
     public function getId(): ?int
@@ -86,6 +98,37 @@ class Competition
     public function setGolf(?Golf $golf): self
     {
         $this->golf = $golf;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Partie[]
+     */
+    public function getPartie(): Collection
+    {
+        return $this->partie;
+    }
+
+    public function addPartie(Partie $partie): self
+    {
+        if (!$this->partie->contains($partie)) {
+            $this->partie[] = $partie;
+            $partie->setCompetition($this);
+        }
+
+        return $this;
+    }
+
+    public function removePartie(Partie $partie): self
+    {
+        if ($this->partie->contains($partie)) {
+            $this->partie->removeElement($partie);
+            // set the owning side to null (unless already changed)
+            if ($partie->getCompetition() === $this) {
+                $partie->setCompetition(null);
+            }
+        }
 
         return $this;
     }
