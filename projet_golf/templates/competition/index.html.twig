@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CompetitionController!{% endblock %}
+
+{% block body %}
+<div>
+   {# {{ form(form) }} #}
+    <form action="App\Controller\test.php" method="post">
+        <div>
+        <label for="name">Insérer votre fichier Excel</label>
+        <input type="file" id="fichier" name="fichier">
+        </div>
+        <div>
+            <label for="heureDebut">Début de la compétition</label>
+            <input type="time" id="heureDebut" name="heureDebut">
+        </div>
+        <div>
+            <label for="decalageDepart">Décalage des départ</label>
+            <input type="time" id="decalageDepart" name="decalageDepart">
+        </div>
+        <div>
+            <button type="submit" value="submit"></button>
+        </div>
+    </form>
+</div>
+{% endblock %}

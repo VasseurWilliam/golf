@@ -43,6 +43,21 @@ class Competition
      */
     private $partie;
 
+    /**
+     * @ORM\Column(type="time")
+     */
+    private $heureDebut;
+
+    /**
+     * @ORM\Column(type="time")
+     */
+    private $decalageDepart;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $fichier;
+
     public function __construct()
     {
         $this->partie = new ArrayCollection();
@@ -129,6 +144,42 @@ class Competition
                 $partie->setCompetition(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getHeureDebut(): ?\DateTimeInterface
+    {
+        return $this->heureDebut;
+    }
+
+    public function setHeureDebut(\DateTimeInterface $heureDebut): self
+    {
+        $this->heureDebut = $heureDebut;
+
+        return $this;
+    }
+
+    public function getDecalageDepart(): ?\DateTimeInterface
+    {
+        return $this->decalageDepart;
+    }
+
+    public function setDecalageDepart(\DateTimeInterface $decalageDepart): self
+    {
+        $this->decalageDepart = $decalageDepart;
+
+        return $this;
+    }
+
+    public function getFichier(): ?string
+    {
+        return $this->fichier;
+    }
+
+    public function setFichier(string $fichier): self
+    {
+        $this->fichier = $fichier;
 
         return $this;
     }
