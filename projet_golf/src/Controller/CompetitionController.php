@@ -32,7 +32,8 @@ class CompetitionController extends AbstractController
         $form = $formBuilder->getForm();
 
         $extract = new ExtractionJson();
-        $extract->genereJson();
+        $name_fichier =
+        $extract->genereJson('export_liste_des_departs.xlsx');
 
         return $this->render('competition/index.html.twig', array(
             'form' => $form->createView(),

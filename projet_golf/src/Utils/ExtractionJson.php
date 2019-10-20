@@ -6,12 +6,20 @@ use SimpleXLSX;
 
 class ExtractionJson
 {
-    public function genereJson()
+    public function extractJson($name_fichier)
     {
+        $this->genereJson($name_fichier);
+    }
 
+    public function genereJson($name_fichier)
+    {
+        //test pour voir si $xlsx est initialisé pour un test
+        if (empty($name_fichier)) {
+            $name_fichier = 'export_liste_des_departs.xlsx';
+        }
 //include the file that loads the PhpSpreadsheet classes
 
-        if ($xlsx = SimpleXLSX::parse('export_liste_des_departs.xlsx')) {//vérifie l'existance du fichier
+        if ($xlsx = SimpleXLSX::parse($name_fichier)) {//vérifie l'existance du fichier
             //echo $xlsx->getCell(0, 'E4').'<br/>';//affiche la date de la compettition
             //echo $xlsx->getCell(0, 'B10').'<br/>';//affiche le nom de la competition
 
@@ -30,18 +38,13 @@ class ExtractionJson
                     "Niveau" => $str_level
                 )
             );
-
-
             print_r(json_encode($json_data, JSON_UNESCAPED_UNICODE) . '<br/>');//l'option  JSON_UNESCAPED_UNICODE permet de gérer les caractères spéciaux
             $file_name = "data.json";
             if (file_put_contents($file_name, json_encode($json_data, JSON_UNESCAPED_UNICODE))) {
-                echo $file_name . ' a été créer';
+                return $file_name . ' a été créer';
             }
-
-
         } else {
-            echo SimpleXLSX::parseError();
-            echo "one est la";
+            return SimpleXLSX::parseError();
         }
 
 
