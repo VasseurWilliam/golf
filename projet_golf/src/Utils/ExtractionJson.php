@@ -8,14 +8,14 @@ class ExtractionJson
 {
     public function extractJson($name_fichier)
     {
-        $this->genereJson($name_fichier);
+        return $this->genereJson($name_fichier);
     }
 
     public function genereJson($name_fichier)
     {
         //test pour voir si $xlsx est initialisé pour un test
         if (empty($name_fichier)) {
-            $name_fichier = 'export_liste_des_departs.xlsx';
+            $name_fichier = 'f1d5e6ed89c354c1351fcc3b06f81ee7.zip';
         }
 //include the file that loads the PhpSpreadsheet classes
 
@@ -46,7 +46,6 @@ class ExtractionJson
         } else {
             return SimpleXLSX::parseError();
         }
-
 
     }
 

@@ -172,12 +172,12 @@ class Competition
         return $this;
     }
 
-    public function getFichier(): ?string
+    public function getFichier()
     {
         return $this->fichier;
     }
 
-    public function setFichier(string $fichier): self
+    public function setFichier( $fichier): self
     {
         $this->fichier = $fichier;
 

@@ -3,12 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Competition;
+use App\Form\UploadExcelType;
 use App\Utils\ExtractionJson;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -17,23 +15,22 @@ class CompetitionController extends AbstractController
     /**
      * @Route("/competition", name="competition")
      */
-    public function index()
+    public function index(Request $request)
     {
-        $competition = new Competition();
+        $upload = new Competition();
+        $file_name='';
+        $form = $this->createForm(UploadExcelType::class, $upload);
 
-        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $competition);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+            $file = $upload->getFichier();
+            $file_name = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('upload_directory'), $file_name);
+            $upload->setFichier($file_name);
 
-        $formBuilder
-            ->add('fichier', FileType::class)
-            ->add('decalageDepart', TimeType::class)
-            ->add('heureDebut', TimeType::class)
-            ->add('save', SubmitType::class);
+            return $this->redirectToRoute('arbitre');
+        }
 
-        $form = $formBuilder->getForm();
-
-        $extract = new ExtractionJson();
-        $name_fichier =
-        $extract->genereJson('export_liste_des_departs.xlsx');
 
         return $this->render('competition/index.html.twig', array(
             'form' => $form->createView(),
