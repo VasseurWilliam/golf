@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Competition;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -24,6 +25,7 @@ class UploadExcelType extends AbstractType
             ->add('decalageDepart', TimeType::class, array(
                 'label' => 'Veuillez renseigné le décalage entre le départ des équipes'
             ))
+
             ->add('Submit', SubmitType::class);
     }
 

@@ -2,17 +2,124 @@
 
 {% block title %}Hello ArbitreController!{% endblock %}
 
+
+
+
 {% block body %}
 
-    <table>
-        <tr>
-            <pre>
-            {% for joueur in t %}
+    <?php
+use Spipu\Html2Pdf\Html2Pdf;
+ob_start();
 
-            {% endfor %}
-            </pre>
+?>
+
+    {{ competition }} {{ date }} {{ fichier }}
+    <table border="1">
+        <thead style="background:yellow">
+        <tr>
+            <th>#</th>
+            <th>Dep</th>
+            <th>Joueurs</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>11</th>
+            <th>12</th>
+            <th>13</th>
+            <th>14</th>
+            <th>15</th>
+            <th>16</th>
+            <th>17</th>
+            <th>18</th>
+            <th>#</th>
         </tr>
+        </thead>
+        {% set foo = 'bar' %}
+        {% set decal = decalage %}
+        {% set tempTrouHeure = datetimeHeure %}
+        {% set tempTrouHeure2 = tempTrouHeure %}
+
+        {% set tempTrouMinute = datetimeMinute %}
+        {% set tempTrouMinute2 = tempTrouMinute %}
+        {% set decalTrou =[10,12,15,13,14,11,15,13,14,12,15,11,10,13,12,16,14,15] %}
+
+        {% for joueur, joueur2 in equipeJaune3 %}
+            <tr>
+                <td>{{ joueur+1 }}</td>
+                {% if foo == 'bar' %}
+                    <td>{{ datetimeHeure }}:{{ datetimeMinute }}</td>
+                    {% set foo = 'bare' %}
+                {% else %}
+                    {% if datetimeMinute + decal >=60 %}
+                        {% set datetimeMinute = datetimeMinute - 60 %}
+                        {% set datetimeHeure = datetimeHeure + 1 %}
+                    {% endif %}
+                    <td>{{ datetimeHeure }}:{{ datetimeMinute + decal }}</td>
+                    {% set decal = decal + decalage %}
+                {% endif %}
+                <td>
+                    {% for abc in joueur2 %}
+                        {{ abc }}
+                        <br>
+                    {% endfor %}
+                </td>
+
+
+                {% for i in 0..17 %}
+                    {% if tempTrouMinute2 + decalTrou[i] >=60 %}
+                        {% set tempTrouMinute2 = tempTrouMinute2 - 60 %}
+                        {% set tempTrouHeure2 = tempTrouHeure2 + 1 %}
+                    {% endif %}
+                    <td>{{ tempTrouHeure2 }}:{{ tempTrouMinute2 + decalTrou[i] }}</td>
+                    {% set tempTrouMinute2 = tempTrouMinute2 + decalTrou[i] %}
+                {% endfor %}
+
+                {% set tempTrouMinute2 = tempTrouMinute + decalage %}
+                {% set tempTrouMinute = tempTrouMinute + decalage %}
+                {% set tempTrouHeure2 = tempTrouHeure %}
+
+                {% if tempTrouMinute2 >=60 %}
+                    {% set tempTrouMinute2 = tempTrouMinute2 - 60 %}
+                    {% set tempTrouHeure2 = tempTrouHeure2 + 1 %}
+                {% endif %}
+                {% if tempTrouMinute >=60 %}
+                    {% set tempTrouMinute = tempTrouMinute - 60 %}
+                    {% set tempTrouHeure = tempTrouHeure + 1 %}
+                {% endif %}
+
+
+                <td> {{ joueur+1 }}</td>
+            </tr>
+        {% endfor %}
+
     </table>
 
 
+    <?php
+$content = ob_get_clean();
+require('html2pdf/html2pdf.class.php');
+try{
+    $pdf = new HTML2PDF('L', 'A4', 'fr');
+    $pdf->writeHTML($content);
+    $pdf->Outpout('test.php');
+    }catch(HTML2PDF_exception $e){
+    die($e);
+    }
+    ?>
+
+
+
+
+
+
+
 {% endblock %}
+
+

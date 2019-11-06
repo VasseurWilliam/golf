@@ -57,4 +57,9 @@
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings load_method="PHPUNIT_PHAR" configuration_file_path="$PROJECT_DIR$/projet_golf/phpunit.xml.dist" custom_loader_path="" phpunit_phar_path="$PROJECT_DIR$/projet_golf/phpunit.phar" use_configuration_file="true" />
+    </phpunit_settings>
+  </component>
 </project>
