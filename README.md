@@ -33,4 +33,8 @@ créé par l'application.
 
 Le dossier src contient l'essence même du projet.
 
+<<<<<<< HEAD
 Pour terminer, le dossier test contient le fichier de test unitaire.
+=======
+Pour terminer, le dossier test contient le fichier de test unitaire.
+>>>>>>> origin/master
