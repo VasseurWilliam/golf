@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca14dbd9-a64f-455b-92a1-b0f5bcb03bb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/projet_golf/analyse/Rapport_projet_PraGolf_Vincent_Pisano_William_Vasseur (1).docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet_golf/src/Controller/CompetitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/projet_golf/src/Controller/CompetitionController.php" afterDir="false" />
-    </list>
+    <list default="true" id="ca14dbd9-a64f-455b-92a1-b0f5bcb03bb7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +167,7 @@
       <workItem from="1572969032911" duration="5410000" />
       <workItem from="1573032828088" duration="1141000" />
       <workItem from="1573056552076" duration="5917000" />
-      <workItem from="1573111239688" duration="11113000" />
+      <workItem from="1573111239688" duration="11423000" />
     </task>
     <task id="LOCAL-00001" summary="réctification liste joueur">
       <created>1573061955581</created>

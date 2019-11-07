@@ -9,19 +9,17 @@ L'application concerne l'arbitrage de compétition de golf amateur.
 
 # Quand avons nous bossé dessus?
 
-Nous avons travaillé sur ce projet du 7 octobre au 20 octobre 2019
+Nous avons travaillé sur ce projet du 7 octobre au 7 novembre 2019
 
 # A quoi ça ressemble?
 
-Pour le moment, la seule fonction présente et fonctionnelle est la fonction qui extrait
-les données d'un fichier Excel vers un fichier json. En plus de cela, le front-end est 
-réalisé pour l'arbitre mais non achevé. Pour finir, nous avons mis en place un test unitaire
-pour vérifier le bon fonctionnement de l'application.
+L'application extrait les données d'un fichier Excel vers un fichier json. Le json est 
+ensuite traité, on construit à partir de ce json un tableau html puis un fichier pdf à 
+partir de ce fichier.
 
 # La progression
 
-Le projet en cours est à la moitié de sa réalisation. Il ne reste plus qu'à générer le pdf 
-demandé ainsi que les formulaires.
+Le projet est finit.
 
 # Description de l'architecture du git du projet
 
@@ -33,8 +31,5 @@ créé par l'application.
 
 Le dossier src contient l'essence même du projet.
 
-<<<<<<< HEAD
+
 Pour terminer, le dossier test contient le fichier de test unitaire.
-=======
-Pour terminer, le dossier test contient le fichier de test unitaire.
->>>>>>> origin/master
