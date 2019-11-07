@@ -20,9 +20,9 @@ class CompetitionController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
 
-        $upload = new Competition();
+        $competition = new Competition();
         $file_name = '';
-        $form = $this->createForm(UploadExcelType::class, $upload);
+        $form = $this->createForm(UploadExcelType::class, $competition);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -35,39 +35,35 @@ class CompetitionController extends AbstractController
                 // this is needed to safely include the file name as part of the URL
                 $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
                 $newFilename = $safeFilename . '-' . uniqid() . '.' . $uploadedFile->guessExtension();
-                $upload->setFichier($newFilename);
+                $competition->setFichier($newFilename);
                 $uploadedFile->move($this->getParameter('upload_directory'), $newFilename);
-                //dd($upload);
-
-                /*$file = $upload->getFichier();
-                $file_name = md5(uniqid()).'.'.$file->guessExtension();
-                $file->move($this->getParameter('upload_directory'), $file_name);
-                $upload->setFichier($file_name);*/
-
-                $fichier = $upload->getFichier();
-                $heureDebt = $upload->getHeureDebut();
-                $heureDecalage = $upload->getDecalageDepart();
-                $trou1 = $upload->getTrou1();
-                $trou2 = $upload->getTrou2();
-                $trou3 = $upload->getTrou3();
-                $trou4 = $upload->getTrou4();
-                $trou5 = $upload->getTrou5();
-                $trou6 = $upload->getTrou6();
-                $trou7 = $upload->getTrou7();
-                $trou8 = $upload->getTrou8();
-                $trou9 = $upload->getTrou9();
-                $trou10 = $upload->getTrou10();
-                $trou11 = $upload->getTrou11();
-                $trou12 = $upload->getTrou12();
-                $trou13 = $upload->getTrou13();
-                $trou14 = $upload->getTrou14();
-                $trou15 = $upload->getTrou15();
-                $trou16 = $upload->getTrou16();
-                $trou17 = $upload->getTrou17();
-                $trou18 = $upload->getTrou18();
+                //dd($competition);
 
 
-                $upload
+                $fichier = $competition->getFichier();
+                $heureDebt = $competition->getHeureDebut();
+                $heureDecalage = $competition->getDecalageDepart();
+                $trou1 = $competition->getTrou1();
+                $trou2 = $competition->getTrou2();
+                $trou3 = $competition->getTrou3();
+                $trou4 = $competition->getTrou4();
+                $trou5 = $competition->getTrou5();
+                $trou6 = $competition->getTrou6();
+                $trou7 = $competition->getTrou7();
+                $trou8 = $competition->getTrou8();
+                $trou9 = $competition->getTrou9();
+                $trou10 = $competition->getTrou10();
+                $trou11 = $competition->getTrou11();
+                $trou12 = $competition->getTrou12();
+                $trou13 = $competition->getTrou13();
+                $trou14 = $competition->getTrou14();
+                $trou15 = $competition->getTrou15();
+                $trou16 = $competition->getTrou16();
+                $trou17 = $competition->getTrou17();
+                $trou18 = $competition->getTrou18();
+
+
+                $competition
                     ->setFichier($fichier)
                     ->setHeureDebut($heureDebt)
                     ->setDecalageDepart($heureDecalage)
@@ -90,16 +86,10 @@ class CompetitionController extends AbstractController
                     ->setTrou17($trou17)
                     ->setTrou18($trou18);
 
-                $entityManager->persist($upload);
+                $entityManager->persist($competition);
                 $entityManager->flush();
             }
 
-
-
-
-            /*$compet = $this->getDoctrine()->getRepository(Competition::class)->findAll();
-            $id = count($compet);
-            $compet = $this->getDoctrine()->getRepository(Competition::class)->find($id);*/
 
             $extrat = new ExtractionJson();
             $extrat->genereJson('uploads/'.$newFilename);
