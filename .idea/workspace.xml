@@ -2,7 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca14dbd9-a64f-455b-92a1-b0f5bcb03bb7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projet_golf/templates/arbitre/generePdf.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/export_liste_des_departs.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dbc3b30556d8.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc16c3de2192.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc16cb15f61f.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc16d69a6ab1.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc16d8c3e059.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc16e65c5197.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc16ea8ab37c.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc174ae1de6d.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1794b6d8c2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1796467d66.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1796a6a3b2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc179990a06c.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc17a5786160.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc17a792b45e.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc17a9d84478.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc17ad1c3b2b.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc17b0f5458a.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc17b3e6dea4.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc17b65e7e5b.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc17ee74827b.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc17f141cf17.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1807f6b0d7.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc180c104d50.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1815e9036e.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1817eb22a9.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1820665417.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc19b38b3285.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc19c9334a07.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc19d61224b0.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc19e56c0632.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc19ed4a3b68.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc19f80294a1.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1a0a10f23b.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1a4699c1ec.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1a5187f224.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1a65008ee0.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc1aa6870454.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc2f23af030f.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc2f24fba3dd.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/public/uploads/export_liste_des_departs-5dc2f2aea6eaa.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/src/Controller/ArbitreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/projet_golf/src/Controller/ArbitreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/src/Controller/CompetitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/projet_golf/src/Controller/CompetitionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/src/Form/UploadExcelType.php" beforeDir="false" afterPath="$PROJECT_DIR$/projet_golf/src/Form/UploadExcelType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/src/Utils/ExtractionJson.php" beforeDir="false" afterPath="$PROJECT_DIR$/projet_golf/src/Utils/ExtractionJson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/src/Utils/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/projet_golf/src/Utils/Team.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_golf/templates/arbitre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/projet_golf/templates/arbitre/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,12 +142,12 @@
     <property name="settings.editor.selected.configurable" value="fr.adrienbrault.idea.symfony2plugin.ui.TwigSettingsForm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\Documents\Cour_BTS_2019_2020\Projet_Symfony\golf\projet_golf\public" />
-      <recent name="C:\Users\Admin\Documents\Cour_BTS_2019_2020\Projet_Symfony\golf\projet_golf\analyse" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Documents\Cour_BTS_2019_2020\Projet_Symfony\golf\projet_golf\src\Controller" />
+      <recent name="C:\Users\Admin\Documents\Cour_BTS_2019_2020\Projet_Symfony\golf\projet_golf\analyse" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\Cour_BTS_2019_2020\Projet_Symfony\golf\projet_golf\public" />
       <recent name="C:\Users\Admin\Documents\Cour_BTS_2019_2020\Projet_Symfony\golf\projet_golf\analyse" />
     </key>
   </component>
@@ -168,7 +217,8 @@
       <workItem from="1572957065198" duration="5392000" />
       <workItem from="1572969032911" duration="5410000" />
       <workItem from="1573032828088" duration="1141000" />
-      <workItem from="1573056552076" duration="5533000" />
+      <workItem from="1573056552076" duration="5917000" />
+      <workItem from="1573111239688" duration="8634000" />
     </task>
     <task id="LOCAL-00001" summary="réctification liste joueur">
       <created>1573061955581</created>

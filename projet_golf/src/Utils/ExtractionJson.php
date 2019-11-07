@@ -13,20 +13,22 @@ class ExtractionJson
 
     public function genereJson($name_fichier)
     {
-        //test pour voir si $xlsx est initialisé pour un test
+        /*//test pour voir si $xlsx est initialisé pour un test
         if (empty($name_fichier)) {
             $name_fichier = 'f1d5e6ed89c354c1351fcc3b06f81ee7.zip';
-        }
+        }*/
 //include the file that loads the PhpSpreadsheet classes
 
         if ($xlsx = SimpleXLSX::parse($name_fichier)) {//vérifie l'existance du fichier
             //echo $xlsx->getCell(0, 'E4').'<br/>';//affiche la date de la compettition
             //echo $xlsx->getCell(0, 'B10').'<br/>';//affiche le nom de la competition
 
-            $data_joueurs = $this->getList();
+            $data_joueurs = $this->getList($name_fichier);
             //print_r($data_joueurs[0]);
             $str_player = implode(",", $data_joueurs[0]);
+            $str_player = $str_player . ',';
             $str_level = implode(",", $data_joueurs[1]);
+            $str_level = $str_level . ',';
             //echo $str_player.'<br>';
             //echo $str_level.'<br>';
 
@@ -49,9 +51,9 @@ class ExtractionJson
 
     }
 
-    function getList()
+    function getList($name_fichier)
     {//fonction retournant la liste des joueurs et leur niveau
-        $xlsx = SimpleXLSX::parse('export_liste_des_departs.xlsx');
+        $xlsx = SimpleXLSX::parse($name_fichier);
         $list = array();
         $cont = 0;
         for ($cont = 0; $cont < 250; $cont++) {
